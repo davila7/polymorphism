@@ -4,6 +4,44 @@
 
 This project is a simple demonstration of polymorphism in Java using a hierarchy of geometric shape classes. The project illustrates fundamental object-oriented programming concepts such as inheritance, abstract classes, and polymorphism.
 
+## Schema
+
+```mermaid
+classDiagram
+    class Shape {
+        <<abstract>>
+        -String name
+        +Shape(String name)
+        +String getName()
+        +draw()* abstract
+    }
+    
+    class Circle {
+        +Circle(String name)
+        +draw() override
+    }
+    
+    class Square {
+        +Square(String name)
+        +draw() override
+    }
+    
+    class Main {
+        +main(String[] args)
+    }
+    
+    Shape <|-- Circle : extends
+    Shape <|-- Square : extends
+    Main --> Shape : creates and uses
+    Main --> Circle : instantiates
+    Main --> Square : instantiates
+    
+    note for Shape "Abstract base class\nDefines common behavior"
+    note for Circle "Concrete implementation\nDraws a circle"
+    note for Square "Concrete implementation\nDraws a square"
+    note for Main "Creates Shape objects\nDemonstrates polymorphism"
+```
+
 ## Project Structure
 
 `Shape.java` : Abstract base class that defines common behavior for all shapes.
