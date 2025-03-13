@@ -74,7 +74,7 @@ java Main
 
 ### Expected Output
 When running the program, you will see the following output: 
-- ```Drawing a circle```
+- ```Draw a circle```
 - ```Draw a square```
 
 ## Demonstrated Concepts
