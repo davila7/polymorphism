@@ -83,6 +83,5 @@ When running the program, you will see the following output:
 `Polymorphism`: The program treats different types of shapes through their common interface.
 
 `Abstract Methods`: The draw() method must be implemented by all subclasses.
-Extensibility
 
 This project can be easily extended by adding new shapes that inherit from the Shape class, without needing to modify existing code (following the Open/Closed principle of SOLID).
