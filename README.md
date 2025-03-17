@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a simple demonstration of polymorphism in Java using a hierarchy of geometric shape classes. The project illustrates fundamental object-oriented programming concepts such as inheritance, abstract classes, and polymorphism.
+This project is a simple demonstration of polymorphism in Java using a hierarchy of geometric shape classes. The project illustrates fundamental object-oriented programming concepts such as inheritance, abstract classes, and polymorphism. Recent updates have introduced new abstract methods to enhance the functionality of the shape classes.
 
 ## Schema
 
@@ -10,20 +10,24 @@ This project is a simple demonstration of polymorphism in Java using a hierarchy
 classDiagram
     class Shape {
         <<abstract>>
-        -String name
-        +Shape(String name)
-        +String getName()
-        +draw()* abstract
+        +draw() * abstract
+        +erase() * abstract
+        +String get_description() * abstract
+        +void resize(double factor)
     }
     
     class Circle {
         +Circle(String name)
         +draw() override
+        +erase() override
+        +String get_description() override
     }
     
     class Square {
         +Square(String name)
         +draw() override
+        +erase() override
+        +String get_description() override
     }
     
     class Main {
@@ -44,19 +48,21 @@ classDiagram
 
 ## Project Structure
 
-`Shape.java` : Abstract base class that defines common behavior for all shapes.
+- `Shape.java`: Abstract base class that defines common behavior for all shapes, including new abstract methods for erasing and getting descriptions.
 
-`Circle.java`: Concrete implementation of a circular shape.
+- `Circle.java`: Concrete implementation of a circular shape.
 
-`Square.java`: Concrete implementation of a square shape.
+- `Square.java`: Concrete implementation of a square shape.
 
-`Main.java`: Main class that demonstrates the use of polymorphism.
+- `Main.java`: Main class that demonstrates the use of polymorphism.
 
 ## Features
 
 - Use of an abstract class (Shape) with both abstract and concrete methods.
 
 - Specific implementations for different types of shapes.
+
+- New abstract methods for erasing shapes and getting descriptions.
 
 - Demonstration of polymorphism by treating different objects through their common interface.
 
@@ -76,6 +82,10 @@ java Main
 When running the program, you will see the following output: 
 - ```Draw a circle```
 - ```Draw a square```
+- ```Erase a circle```
+- ```Erase a square```
+- ```Circle description```
+- ```Square description```
 
 ## Demonstrated Concepts
 
@@ -85,7 +95,7 @@ When running the program, you will see the following output:
 
 `Polymorphism`: The program treats different types of shapes through their common interface.
 
-`Abstract Methods`: The draw() method must be implemented by all subclasses.
+`Abstract Methods`: The draw(), erase(), and get_description() methods must be implemented by all subclasses.
 
 ## Extensibility
 
